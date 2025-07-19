@@ -1,13 +1,21 @@
-
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local act = wezterm.action
 
--- This is where you actually apply your config choices.
 config.font = wezterm.font 'Simple Nerd Font'
-config.font_size = 21
-config.line_height = 2
+config.font_size = 17
+config.line_height = 2.2
+
+-- config.font = wezterm.font 'GT Pressura Mono Trial'
+-- config.font_size = 18
+-- config.line_height = 1.4
+
+-- config.font = wezterm.font 'BB Manual Mono Pro Cover'
+-- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0', 'zero=1' }
+-- config.font_size = 18
+-- config.line_height = 1.2
+
+
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 
@@ -96,7 +104,6 @@ local maximize_split = {
   key = 'z', mods = 'ALT',
   action = act.TogglePaneZoomState,
 }
-
 
 table.insert(config.keys,spawn_tab)
 
