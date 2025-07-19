@@ -2,9 +2,21 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.font = wezterm.font 'Simple Nerd Font'
-config.font_size = 17
-config.line_height = 2.2
+local is_darwin <const> = wezterm.target_triple:find("darwin") ~= nil
+local is_linux <const> = wezterm.target_triple:find("linux") ~= nil
+
+if is_darwin then
+  config.font = wezterm.font 'Simple Nerd Font'
+  config.font_size = 17
+  config.line_height = 2.2
+end
+
+if is_linux then
+  config.font = wezterm.font 'Simple Nerd Font'
+  config.font_size = 20
+  config.line_height = 2
+end
+
 
 -- config.font = wezterm.font 'GT Pressura Mono Trial'
 -- config.font_size = 18
